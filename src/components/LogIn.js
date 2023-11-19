@@ -1,16 +1,16 @@
 import React from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 
-function LogIn() {
+function LogIn({loggedIn, setLoggedIn}) {
   return (
     <div className='login-page'>
         <div className='login-form'>
             <h2>Login:</h2>
             <>
-            <Form>
+            <Form className='loginInput'>
                 <FormGroup floating>
                 <Input
-                    id="exampleEmail"
+                    id="loginEmail"
                     name="email"
                     placeholder="Email"
                     type="email"
@@ -22,7 +22,7 @@ function LogIn() {
                 {' '}   
                 <FormGroup floating>
                 <Input
-                    id="examplePassword"
+                    id="loginPassword"
                     name="password"
                     placeholder="Password"
                     type="password"
@@ -32,7 +32,7 @@ function LogIn() {
                 </Label>
                 </FormGroup>
                 {' '}
-                <Button>
+                <Button onClick={() => setLoggedIn(true)}>
                 Login
                 </Button>
             </Form>

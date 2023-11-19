@@ -5,8 +5,11 @@ import { useEffect, useState } from 'react';
 import AuthAPI from './components/AuthAPI';
 import Home from './components/Home';
 import LogIn from './components/LogIn';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 
 function App() {
+
+  const navigate = useNavigate();
 
   const [loggedIn, setLoggedIn] = useState(false)
 
@@ -45,20 +48,25 @@ function App() {
       getArtist();
   }, [])
 
-  if (loggedIn){
-    return <Home />
-  }else {
-    return <LogIn />
-  }
-      
+  useEffect(() => {
+    if (loggedIn){
+      return navigate("/")
+    }else {
+      return navigate("/login")
+    }
+  }, [loggedIn])
+
   if (!artist || !artist.images || !artist.images[2]) {
       return <div className='App-header'><h1>Loading...</h1></div>; // or any loading indicator or fallback
   }
 
   return (
     <div className="App-header">
+      <Routes>
+        <Route path='/login' element={<LogIn loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
+        <Route path='/' element={<Home />} />
+      </Routes>
       
-      {/* <AuthAPI token={token} artist={artist} /> */}
     </div>
   );
   

@@ -14,16 +14,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   color: white;
 }
 
 .login-form{
+  /* color: black; */
   width: 40vw;
   height: 40vh;
-  border: 2px red solid;
+  /* border: 2px red solid; */
 }
 
-.login-page{
-  /* background-color: #282c34; */
+.loginInput{
+  color: black;
 }
