@@ -30,6 +30,7 @@ function NavBar() {
                     )
                 })}
             </DropdownMenu>
+            <Button onClick={() => setLoggedIn(false)}>Log Out</Button>
         </UncontrolledDropdown>
     </div>
   )

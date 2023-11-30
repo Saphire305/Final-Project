@@ -5,7 +5,7 @@ import NavBar from './NavBar'
 function Home(props) {
   return (
     <div className='page'>
-      <NavBar />
+      <NavBar props={props}/>
       
       <AuthAPI props={props} />
     </div>
