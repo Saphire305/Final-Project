@@ -1,9 +1,13 @@
 import React from 'react'
+import AuthAPI from './AuthAPI'
+import NavBar from './NavBar'
 
-function Home() {
+function Home(props) {
   return (
-    <div>
-      {/* <AuthAPI token={token} artist={artist} /> */}
+    <div className='page'>
+      <NavBar />
+      
+      <AuthAPI props={props} />
     </div>
   )
 }

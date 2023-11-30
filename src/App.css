@@ -28,3 +28,23 @@ body {
 .loginInput{
   color: black;
 }
+
+.navbar{
+  background-color: #464749;
+  height: 7vh;
+  padding: 0;
+  justify-content: left;
+}
+
+.page{
+  width: 100vw;
+  height: 100vh;
+}
+
+.navButton{
+  background-color: #464749;
+  border: solid 2px black;
+  height: 100%;
+  width: 20%;
+  justify-self: left;
+}

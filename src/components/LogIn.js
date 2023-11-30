@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 
 function LogIn({loggedIn, setLoggedIn}) {
+    const navigate = useNavigate();
   return (
-    <div className='login-page'>
+    <div className='login-page page'>
         <div className='login-form'>
             <h2>Login:</h2>
             <>
@@ -32,7 +34,10 @@ function LogIn({loggedIn, setLoggedIn}) {
                 </Label>
                 </FormGroup>
                 {' '}
-                <Button onClick={() => setLoggedIn(true)}>
+                <Button onClick={() => {
+                    setLoggedIn(true);
+                    navigate("/");
+                }}>
                 Login
                 </Button>
             </Form>
